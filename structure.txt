@@ -1,0 +1,34 @@
+pages:-for athelets :create an account and list of coaches he can choose from them what he want and 
+       when he click go to the page to add 
+       his infos(athelets form) to apply for a program
+       and if he fill the form and click the button to submit 
+       
+       -for coaches : see the request of the client list of them and when he click to a request he go into a another page(for requests)
+       see infos of the client and in the bottom there's two buttons one for the accept and the other to reject   
+
+       -athelets form : the page that the athelets fill it and go to the coach page as a request
+
+
+components : -the coaches card(athelets) 
+             -the athelets form(coach)
+             -requests (coach)
+
+
+athelets data : {
+   id
+   firstName
+   lastName
+   age 
+   height
+   weight
+   program
+}         
+
+coaches data : {
+   id
+   firstName
+   lastName
+   age 
+   speciality
+   requests
+}
