@@ -30,10 +30,8 @@ export default function ContactForm() {
             data-aos="fade-up"
             className="relative cursor-none backdrop-blur-2xl bg-white/5 border border-white/10 p-10 rounded-3xl shadow-2xl w-full max-w-2xl"
          >
-            {/* Glow Effect */}
             <div className="absolute inset-0 rounded-3xl -z-10 bg-gradient-to-br from-[#D7263D]/30 via-transparent to-[#D7263D]/10 blur-2xl"></div>
 
-            {/* NAME INPUT */}
             <div className="relative mb-8">
                <input
                   type="text"
@@ -55,7 +53,6 @@ export default function ContactForm() {
                </label>
             </div>
 
-            {/* EMAIL INPUT */}
             <div className="relative mb-8">
                <input
                   type="email"
@@ -77,7 +74,6 @@ export default function ContactForm() {
                </label>
             </div>
 
-            {/* MESSAGE TEXTAREA */}
             <div className="relative mb-10">
                <textarea
                   name="message"
@@ -99,7 +95,6 @@ export default function ContactForm() {
                </label>
             </div>
 
-            {/* BUTTON */}
             <button
                type="submit"
                className="w-full py-3 rounded-xl font-bold text-white border border-[#D7263D] 

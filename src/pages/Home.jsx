@@ -9,7 +9,10 @@ import 'aos/dist/aos.css';
 import { useEffect } from "react";
 import ContactForm from '../components/ContactForm';
 import ScrollToTopButton from '../components/ScrollToTop';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 
 export default function Home() {
@@ -122,6 +125,22 @@ export default function Home() {
                <ContactForm />
             </section>
             <ScrollToTopButton />
+            <ul className="flex gap-5 -mt-30 justify-self-center">
+               <li><a href="https://instagram.com/a07070_7">
+                  <FontAwesomeIcon className='text-red-500 text-2xl cursor-none' icon={faInstagram} />
+               </a>
+               </li>
+               <li>
+                  <a href="https://wa.me/0614101711">
+                     <FontAwesomeIcon className='text-red-500 text-2xl cursor-none' icon={faWhatsapp} />
+                  </a>
+               </li>
+               <li>
+                  <a href="https://github.com/homecoming7777">
+                     <FontAwesomeIcon className='text-red-500 text-2xl cursor-none' icon={faGithub} />
+                  </a>
+               </li>
+            </ul>
          </div>
 
       </>
