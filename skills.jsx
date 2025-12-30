@@ -15,5 +15,6 @@ export const skills = [
    {name: "Html", img:"https://www.svgrepo.com/show/452228/html-5.svg"},
    {name: "Python", img:"https://www.svgrepo.com/show/452091/python.svg"},
    {name: "React Router", img:"https://www.svgrepo.com/show/354262/react-router.svg"},
-   {name: "Laravel", img:"https://www.svgrepo.com/show/353985/laravel.svg"}
+   {name: "Laravel", img:"https://www.svgrepo.com/show/353985/laravel.svg"},
+   {name: "Github", img:"https://www.svgrepo.com/show/449764/github.svg"}
 ] 
