@@ -42,7 +42,7 @@ export default function Home() {
             {/* ✅ FIX: added overflow-hidden */}
             <div className="opacity-20 absolute -z-100 w-full h-180 sm:h-150 overflow-hidden">
                <video
-                  src="public/pinterest_video_12666442697465639_69da7491.mp4"
+                  src="/pinterest_video_12666442697465639_69da7491.mp4"
                   className="w-full h-full"
                   loop
                   autoPlay
@@ -94,7 +94,7 @@ export default function Home() {
                >
                   <img
                      className="image w-full h-full rounded-2xl"
-                     src="public/me.jpg"
+                     src="/me.jpg"
                      alt=""
                   />
                </div>
@@ -104,7 +104,7 @@ export default function Home() {
                {/* ✅ FIX: added overflow-hidden */}
                <div className="opacity-40 absolute -z-100 w-full overflow-hidden">
                   <img
-                     src="public/chatpngC.jpg"
+                     src="/chatpngC.jpg"
                      className="w-full h-full md:h-150 md:w-100 md:flex md:justify-self-center md:mt-50 lg:mt-10"
                      alt=""
                   />
