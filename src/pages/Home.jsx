@@ -49,7 +49,7 @@ export default function Home() {
             </div>
 
             <section className="lg:grid lg:grid-cols-2">
-               <div className="pt-25 sm:pt-20 lg:pt-30">
+               <div className="pt-25 sm:pt-20 lg:pt-10">
                   <h2
                      data-aos="fade-down"
                      className="text-white font-extralight text-xs ml-15 sm:ml-10 md:ml-25 lg:text-2xl"
@@ -57,10 +57,19 @@ export default function Home() {
                      Hi, i'm Abdessamad
                   </h2>
 
-                  <h1
-                     data-aos="zoom-in"
-                     className="momo-trust-display-regular text-6xl text-center text-white uppercase font-extrabold sm:text-8xl lg:text-left lg:ml-25 lg:w-150 lg:text-8xl"
-                  >
+                  <h1 class=" bbh-sans-bogle-regular 
+    text-6xl md:text-8xl font-bold
+    bg-[url('cyber-security-expert-working-with-technology-neon-lights.jpg')]
+    bg-center
+    bg-repeat
+    bg-contain
+    text-transparent
+    [-webkit-text-fill-color:transparent]
+    [-webkit-background-clip:text]
+    bg-clip-text
+    leading-tight
+    text-center
+  ">
                      full-stack software developer
                   </h1>
 
