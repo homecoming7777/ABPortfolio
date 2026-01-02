@@ -147,4 +147,24 @@ export const projects = [
          }
       ]
    },
+   {
+      id:8,
+      title: "Todo-List App",
+      description: "Todo-list app task manager",
+      Project_image: "todo.PNG",
+      stack: [
+         {
+            name:"React",
+            img: "https://www.svgrepo.com/show/355190/reactjs.svg"
+         },
+         {
+            name:"tailwindcss",
+            img: "https://www.svgrepo.com/show/354431/tailwindcss-icon.svg"
+         },
+         {
+            name:"React Router",
+            img:"https://www.svgrepo.com/show/354262/react-router.svg"
+         }
+      ]
+   },
 ]
