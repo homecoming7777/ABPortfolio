@@ -57,12 +57,12 @@ export default function Home() {
                      Hi, i'm Abdessamad
                   </h2>
 
-                  <h1
+                  <h2
                      data-aos="zoom-in"
-                     className="momo-trust-display-regular text-6xl text-center text-white uppercase font-extrabold sm:text-8xl lg:text-left lg:ml-25 lg:w-150 lg:text-8xl"
+                     className="momo-trust-display-regular text-shadow-2xl text-shadow-red-500  text-6xl text-center text-white uppercase font-extrabold sm:text-8xl lg:text-left lg:ml-25 lg:w-150 lg:text-8xl"
                   >
                      full-stack software developer
-                  </h1>
+                  </h2>
 
                   <p className="text-gray-400 font-extralight text-center mx-10 mt-2 lg:text-left lg:ml-25">
                      I love turning ideas into clean, functional, and scalable products.
