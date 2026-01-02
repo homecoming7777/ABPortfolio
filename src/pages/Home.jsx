@@ -35,14 +35,12 @@ export default function Home() {
 
    return (
       <>
-         {/* ✅ FIX: added relative + overflow-hidden */}
          <div className="lg:cursor-none pb-10 w-full overflow-x-hidden relative overflow-hidden">
             <CustomCursor />
 
-            {/* ✅ FIX: added overflow-hidden */}
             <div className="opacity-20 absolute -z-100 w-full h-180 sm:h-150 overflow-hidden">
                <video
-                  src="public/pinterest_video_12666442697465639_69da7491.mp4"
+                  src="pinterest_video_12666442697465639_69da7491.mp4"
                   className="w-full h-full"
                   loop
                   autoPlay
@@ -87,24 +85,22 @@ export default function Home() {
                   </div>
                </div>
 
-               {/* ✅ FIX: removed ml-40, replaced with mx-auto */}
                <div
                   data-aos="zoom-out"
                   className="w-90 h-130 hidden lg:block mt-10 groupe mx-auto"
                >
                   <img
                      className="image w-full h-full rounded-2xl"
-                     src="public/me.jpg"
+                     src="me.jpg"
                      alt=""
                   />
                </div>
             </section>
 
             <section className="pb-10 lg:pt-5">
-               {/* ✅ FIX: added overflow-hidden */}
                <div className="opacity-40 absolute -z-100 w-full overflow-hidden">
                   <img
-                     src="public/chatpngC.jpg"
+                     src="chatpngC.jpg"
                      className="w-full h-full md:h-150 md:w-100 md:flex md:justify-self-center md:mt-50 lg:mt-10"
                      alt=""
                   />
