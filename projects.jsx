@@ -83,7 +83,7 @@ export const projects = [
       id:5,
       title: "Predictions",
       description: "A football analytics website that provides weekly Premier League match predictions, team stats, form analysis, and results tracking.",
-      Project_image: "predict.PNG",
+      Project_image: "predictions.PNG",
       stack: [
          {
             name:"html",
