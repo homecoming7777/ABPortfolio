@@ -105,7 +105,8 @@ export const projects = [
             name:"mysql",
             img:"https://www.svgrepo.com/show/303251/mysql-logo.svg"
          }
-      ]
+      ],
+      link:"https://plpredictions.42web.io/login.php"
    },
    {
       id:6,
@@ -165,6 +166,28 @@ export const projects = [
             name:"React Router",
             img:"https://www.svgrepo.com/show/354262/react-router.svg"
          }
-      ]
+      ],
+      link:"https://mytodolist-iota.vercel.app/"
+   },
+   {
+      id:9,
+      title: "digitalised cabinet",
+      description: "solve a need and replace the pappers with functionnal clean and easy app generate and controle everything about patients",
+      Project_image: "Capture.PNG",
+      stack: [
+         {
+            name:"React",
+            img: "https://www.svgrepo.com/show/355190/reactjs.svg"
+         },
+         {
+            name:"tailwindcss",
+            img: "https://www.svgrepo.com/show/354431/tailwindcss-icon.svg"
+         },
+         {
+            name:"React Router",
+            img:"https://www.svgrepo.com/show/354262/react-router.svg"
+         }
+      ],
+      link:"https://cabinetdigitaliser.vercel.app/"
    },
 ]

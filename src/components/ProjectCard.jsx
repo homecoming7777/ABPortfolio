@@ -1,7 +1,7 @@
 export default function ProjectCard({ projects }) {
    return (
       <>
-         <div className="border-1 border-[#D7263D] m-5 rounded-2xl hover:shadow-2xl hover:shadow-red-500" data-aos="fade-up">
+         <div className="border-1 border-[#D7263D] m-5 pb-5 rounded-2xl hover:shadow-2xl hover:shadow-red-500" data-aos="fade-up">
             <div>
                   <img src={projects.Project_image} className="w-full h-full rounded-t-2xl" alt="" />
             </div>
@@ -23,6 +23,7 @@ export default function ProjectCard({ projects }) {
             <p className="text-gray-400 p-5 text-sm">
                {projects.description}
             </p>
+               {projects.link ? <a href={projects.link} className="text-red-500 font-bold cursor-none p-5">VIEW</a> : ""}
 
          </div>
       </>
