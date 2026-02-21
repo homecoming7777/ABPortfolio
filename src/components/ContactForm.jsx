@@ -122,7 +122,7 @@ export default function ContactForm() {
           Send Message
         </button><div className="mt-6 text-center">
           <a
-            href="/public/Black and White Simple CV Resume.pdf"
+            href="Black and White Simple CV Resume.pdf"
             className="inline-block text-gray-400 hover:text-[#D7263D] transition-colors duration-300 text-sm font-medium cursor-none underline underline-offset-4"
           >
             Download My CV
