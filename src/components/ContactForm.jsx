@@ -120,7 +120,15 @@ export default function ContactForm() {
                           shadow-lg hover:shadow-[#D7263D]/40 cursor-none"
         >
           Send Message
-        </button>
+        </button><div className="mt-6 text-center">
+          <a
+            href="/public/Black and White Simple CV Resume.pdf"
+            className="inline-block text-gray-400 hover:text-[#D7263D] transition-colors duration-300 text-sm font-medium cursor-none underline underline-offset-4"
+          >
+            Download My CV
+          </a>
+        </div>
+
       </form>
     </div>
   );
