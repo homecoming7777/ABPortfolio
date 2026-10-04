@@ -13,6 +13,7 @@ import SectionNav from "../components/SectionNav";
 import ScrollProgress from "../components/ScrollProgress";
 import Services from "../components/Services";
 import Process from "../components/Process";
+import Marquee from "../components/Marquee";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -54,6 +55,8 @@ export default function Home() {
                   playsInline
                   aria-hidden="true"
                />
+               <div className="hero-grid absolute inset-0"></div>
+               <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-[#D7263D]/20 blur-3xl"></div>
                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black"></div>
             </div>
 
@@ -72,10 +75,16 @@ export default function Home() {
                   </h2>
 
                   <h2
-                     data-aos="zoom-in"
+                     aria-label="full-stack software developer"
                      className="momo-trust-display-regular  text-6xl leading-[0.95] tracking-tight text-center text-white uppercase font-extrabold sm:text-8xl lg:text-left lg:max-w-150 lg:text-8xl"
                   >
-                     full-stack software developer
+                     {["full-stack", "software", "developer"].map((word, index) => (
+                        <span key={word} aria-hidden="true">
+                           <span className="reveal-word" style={{ "--i": index }}>
+                              {word}
+                           </span>{" "}
+                        </span>
+                     ))}
                   </h2>
 
                   <p className="text-gray-300 font-light text-center max-w-md mx-auto mt-5 lg:text-left lg:mx-0">
@@ -109,15 +118,18 @@ export default function Home() {
 
                <div
                   data-aos="zoom-out"
-                  className="w-90 h-130 hidden lg:block mt-10 groupe mx-auto"
+                  className="relative w-90 h-130 hidden lg:block mt-10 groupe mx-auto"
                >
+                  <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-2xl border-2 border-[#D7263D]/60"></div>
                   <img
-                     className="image w-full h-full rounded-2xl"
+                     className="image relative w-full h-full rounded-2xl"
                      src="me.jpg"
                      alt="Portrait of Abdessamad"
                   />
                </div>
             </section>
+
+            <Marquee items={skills.map((skill) => skill.name).filter(Boolean)} />
 
             <section id="about" className="pb-10 lg:pt-5">
                <div className="opacity-40 absolute -z-100 w-full overflow-hidden">
@@ -169,7 +181,7 @@ export default function Home() {
 
             <Services />
 
-            <section id='Projects'>
+                        <section id='Projects'>
                <h2
                   data-aos="fade-up"
                   className="section-title bbh-sans-bogle-regular uppercase font-bold px-6 pb-3 text-4xl pt-24 text-[#D7263D] sm:pt-32 sm:text-6xl lg:pt-20 lg:px-12"
@@ -179,9 +191,9 @@ export default function Home() {
 
                <div className="h-px bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
 
-               <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 max-w-6xl mx-auto px-1 sm:px-0">
+               <div className="mt-14 mx-auto flex max-w-6xl flex-col gap-16 px-6 lg:gap-24">
                   {projects.map((project, index) => (
-                     <ProjectCard projects={project} key={index} />
+                     <ProjectCard projects={project} key={index} reverse={index % 2 === 1} />
                   ))}
                </div>
             </section>
