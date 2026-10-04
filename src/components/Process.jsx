@@ -1,3 +1,5 @@
+import SectionTitle from "./SectionTitle";
+
 const steps = [
   {
     title: "Discuss",
@@ -20,14 +22,10 @@ const steps = [
 export default function Process() {
   return (
     <section id="process">
-      <h2
-        data-aos="fade-up"
+      <SectionTitle
+        text="+how i work"
         className="section-title bbh-sans-bogle-regular uppercase font-bold px-6 pb-3 text-4xl pt-24 text-[#D7263D] sm:pt-32 sm:text-6xl lg:pt-20 lg:px-12"
-      >
-        +how i work
-      </h2>
-
-      <div className="h-px bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
+      />
 
       <ol className="mt-10 mx-6 grid max-w-6xl gap-8 sm:grid-cols-2 lg:mx-auto lg:grid-cols-4 lg:gap-6">
         {steps.map((step, index) => (

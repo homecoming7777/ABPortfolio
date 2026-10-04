@@ -1,3 +1,5 @@
+import SectionTitle from "./SectionTitle";
+
 const services = [
   {
     title: "Frontend interfaces",
@@ -16,14 +18,10 @@ const services = [
 export default function Services() {
   return (
     <section id="services">
-      <h2
-        data-aos="fade-up"
+      <SectionTitle
+        text="+what i do"
         className="section-title bbh-sans-bogle-regular uppercase font-bold px-6 pb-3 text-4xl pt-24 text-[#D7263D] sm:pt-32 sm:text-6xl lg:pt-20 lg:px-12"
-      >
-        +what i do
-      </h2>
-
-      <div className="h-px bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
+      />
 
       <ul className="mt-10 mx-6 max-w-5xl divide-y divide-white/10 border-y border-white/10 lg:mx-auto">
         {services.map((service) => (

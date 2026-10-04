@@ -14,6 +14,7 @@ import ScrollProgress from "../components/ScrollProgress";
 import Services from "../components/Services";
 import Process from "../components/Process";
 import Marquee from "../components/Marquee";
+import SectionTitle from "../components/SectionTitle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -141,13 +142,10 @@ export default function Home() {
                </div>
 
                <div>
-                  <h2
-                     data-aos="fade-up"
+                  <SectionTitle
+                     text="+about"
                      className="section-title bbh-sans-bogle-regular uppercase px-6 pb-3 text-4xl pt-24 text-[#D7263D] sm:pt-32 sm:text-6xl lg:pt-20 lg:px-12"
-                  >
-                     +about
-                  </h2>
-                  <div className="h-px bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
+                  />
                </div>
 
                <div className="pt-8 px-6 max-w-3xl mx-auto sm:pt-16" data-aos="fade-up">
@@ -163,14 +161,10 @@ export default function Home() {
             </section>
 
             <section id="skills" className="sm:mt-60">
-               <h2
+               <SectionTitle
+                  text="+tech arsenal"
                   className="section-title bbh-sans-bogle-regular px-6 pb-3 text-4xl pt-10 text-[#D7263D] uppercase font-bold sm:text-6xl lg:px-12"
-                  data-aos="fade-up"
-               >
-                  +tech arsenal
-               </h2>
-
-               <div className="h-px bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
+               />
 
                <div data-aos="fade-up" className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-10 px-4 max-w-6xl mx-auto">
                   {skills.map((skill, index) => (
@@ -181,15 +175,11 @@ export default function Home() {
 
             <Services />
 
-                        <section id='Projects'>
-               <h2
-                  data-aos="fade-up"
+            <section id='Projects'>
+               <SectionTitle
+                  text="+featured projects"
                   className="section-title bbh-sans-bogle-regular uppercase font-bold px-6 pb-3 text-4xl pt-24 text-[#D7263D] sm:pt-32 sm:text-6xl lg:pt-20 lg:px-12"
-               >
-                  +featured projects
-               </h2>
-
-               <div className="h-px bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
+               />
 
                <div className="mt-14 mx-auto flex max-w-6xl flex-col gap-16 px-6 lg:gap-24">
                   {projects.map((project, index) => (
@@ -201,14 +191,10 @@ export default function Home() {
             <Process />
 
             <section className="pb-10" id='contact'>
-               <h2
-                  data-aos="fade-up"
+               <SectionTitle
+                  text="+Let’s work together"
                   className="section-title bbh-sans-bogle-regular uppercase font-bold px-6 pb-3 text-4xl pt-20 text-[#D7263D] sm:text-6xl text-center"
-               >
-                  +Let’s work together
-               </h2>
-
-               <div className="h-px bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
+               />
 
                <p
                   data-aos="zoom-out"
