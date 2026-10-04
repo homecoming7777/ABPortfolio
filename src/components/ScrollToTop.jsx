@@ -13,7 +13,7 @@ export default function ScrollToTopButton() {
       }
     };
 
-    window.addEventListener("scroll", toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
@@ -27,6 +27,8 @@ export default function ScrollToTopButton() {
   return (
     <button
       onClick={scrollToTop}
+      aria-label="Scroll to top"
+      tabIndex={visible ? 0 : -1}
       className={`fixed bottom-6 cursor-none right-6 p-3 rounded-full bg-[#D7263D] text-white shadow-lg transition-all duration-300 hover:scale-110 ${
         visible ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}

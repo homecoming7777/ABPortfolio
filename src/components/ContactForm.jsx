@@ -1,12 +1,8 @@
 import { useState, useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import emailjs from "@emailjs/browser";
 
 export default function ContactForm() {
   useEffect(() => {
-    AOS.init({ duration: 800, once: false });
-
     emailjs.init("3JOcRLYqAWxF1kR8h");
   }, []);
 
@@ -16,27 +12,33 @@ export default function ContactForm() {
     message: "",
   });
 
+  const [status, setStatus] = useState({ type: "idle", text: "" });
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (e.target.elements.botcheck?.value) return;
+    if (status.type === "sending") return;
+    setStatus({ type: "sending", text: "Sending..." });
+    const form = e.target;
 
     emailjs.sendForm(
       "service_fitcu46",
       "template_t0mwoeg",
-      e.target,
+      form,
       "3JOcRLYqAWxF1kR8h"
     ).then(
       () => {
-        alert("Message sent successfully ✅");
-        e.target.reset();
+        setStatus({ type: "success", text: "Message sent successfully ✅" });
+        form.reset();
         setFormData({ name: "", email: "", message: "" });
       },
       (error) => {
         console.error(error);
-        alert("Failed to send ❌");
+        setStatus({ type: "error", text: "Failed to send ❌ Please try again." });
       }
     );
   };
@@ -46,9 +48,18 @@ export default function ContactForm() {
       <form
         onSubmit={handleSubmit}
         data-aos="fade-up"
-        className="relative cursor-none backdrop-blur-2xl bg-white/5 border border-white/10 p-10 rounded-3xl shadow-2xl w-full max-w-2xl"
+        className="relative cursor-none backdrop-blur-2xl bg-white/5 border border-white/10 p-6 sm:p-10 rounded-3xl shadow-2xl w-full max-w-2xl"
       >
         <div className="absolute inset-0 rounded-3xl -z-10 bg-gradient-to-br from-[#D7263D]/30 via-transparent to-[#D7263D]/10 blur-2xl"></div>
+
+        <input
+          type="text"
+          name="botcheck"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="hidden"
+        />
 
         <div className="relative mb-8">
           <input
@@ -115,20 +126,31 @@ export default function ContactForm() {
 
         <button
           type="submit"
-          className="w-full py-3 rounded-xl font-bold text-white border border-[#D7263D] 
-                          hover:bg-[#D7263D] hover:text-black transition-all tracking-wide 
-                          shadow-lg hover:shadow-[#D7263D]/40 cursor-none"
+          disabled={status.type === "sending"}
+          className="disabled:opacity-60 disabled:cursor-wait w-full py-3 rounded-xl font-bold text-white border border-[#D7263D] bg-[#D7263D] 
+                          hover:bg-white hover:text-black hover:border-white transition-all tracking-wide 
+                          shadow-lg hover:shadow-white/20 cursor-none"
         >
-          Send Message
-        </button><div className="mt-6 text-center">
+          {status.type === "sending" ? "Sending..." : "Send Message"}
+        </button>
+
+        <p
+          role="status"
+          aria-live="polite"
+          className={`mt-4 text-center text-sm ${status.type === "error" ? "text-red-400" : "text-green-400"}`}
+        >
+          {status.type === "success" || status.type === "error" ? status.text : ""}
+        </p>
+
+        <div className="mt-6 text-center">
           <a
             href="Black and White Simple CV Resume.pdf"
+            download
             className="inline-block text-gray-400 hover:text-[#D7263D] transition-colors duration-300 text-sm font-medium cursor-none underline underline-offset-4"
           >
             Download My CV
           </a>
         </div>
-
       </form>
     </div>
   );

@@ -1,1 +1,59 @@
 @import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #000;
+  }
+
+  ::selection {
+    background: #D7263D;
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid #D7263D;
+    outline-offset: 3px;
+  }
+}
+
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: radial-gradient(
+    380px circle at var(--x, 50%) var(--y, 50%),
+    rgb(215 38 61 / 0.18),
+    transparent 60%
+  );
+}
+
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  video {
+    display: none;
+  }
+
+  .animate-ping {
+    animation: none;
+  }
+
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

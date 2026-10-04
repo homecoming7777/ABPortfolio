@@ -1,16 +1,22 @@
 import { useEffect, useRef } from "react";
 
 export default function CustomCursor() {
-  const dotRef = useRef(null);         // instant dot
-  const outlineRef = useRef(null);     // lagging outline
-  const pos = useRef({ x: 0, y: 0 });  // outline position (smoothed)
-  const mouse = useRef({ x: 0, y: 0 }); // latest mouse position
+  const dotRef = useRef(null);
+  const outlineRef = useRef(null);
+  const pos = useRef({ x: 0, y: 0 });
+  const mouse = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    // update instant dot position immediately on mouse move
     const handleMouseMove = (e) => {
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
+
+      const interactive =
+        e.target instanceof Element &&
+        e.target.closest("a, button, input, textarea, [role='button']");
+      if (outlineRef.current) {
+        outlineRef.current.style.scale = interactive ? "1.8" : "1";
+      }
       if (dotRef.current) {
         dotRef.current.style.left = `${e.clientX}px`;
         dotRef.current.style.top = `${e.clientY}px`;
@@ -19,10 +25,9 @@ export default function CustomCursor() {
 
     window.addEventListener("mousemove", handleMouseMove);
 
-    // animate the outline with a small easing (requestAnimationFrame)
     let rafId;
     const render = () => {
-      pos.current.x += (mouse.current.x - pos.current.x) * 0.15; // smoothing factor
+      pos.current.x += (mouse.current.x - pos.current.x) * 0.15;
       pos.current.y += (mouse.current.y - pos.current.y) * 0.15;
       if (outlineRef.current) {
         outlineRef.current.style.left = `${pos.current.x}px`;
@@ -32,7 +37,6 @@ export default function CustomCursor() {
     };
     render();
 
-    // cleanup
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       cancelAnimationFrame(rafId);
@@ -41,14 +45,12 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* lagging outline (larger) */}
       <div
         ref={outlineRef}
         className="pointer-events-none z-100 fixed hidden lg:block w-8 h-8 rounded-full border-2 border-red-400/60 transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-200"
-        style={{ left: "0px", top: "0px" }}
+        style={{ left: "0px", top: "0px", transition: "scale 150ms ease-out" }}
       />
 
-      {/* instant dot (small) */}
       <div
         ref={dotRef}
         className="pointer-events-none fixed z-100 hidden lg:block w-3 h-3 rounded-full bg-red-500 transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-150"
