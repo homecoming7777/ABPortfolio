@@ -106,7 +106,7 @@ export const projects = [
             img:"https://www.svgrepo.com/show/303251/mysql-logo.svg"
          }
       ],
-      link:"https://plpredictions.42web.io/login.php" 
+      link:"https://predictions.infinityfreeapp.com" 
    },
    {
       id:6,
