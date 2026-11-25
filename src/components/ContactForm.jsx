@@ -144,7 +144,7 @@ export default function ContactForm() {
 
         <div className="mt-6 text-center">
           <a
-            href="Black and White Simple CV Resume.pdf"
+            href="ABPortfolio/public/Abdessamad_Benzekri_CV_BIM.pdf"
             download
             className="inline-block text-gray-400 hover:text-[#D7263D] transition-colors duration-300 text-sm font-medium cursor-none underline underline-offset-4"
           >
